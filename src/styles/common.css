@@ -1,0 +1,108 @@
+.form-wrapper, .ant-table-pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.form-wrapper > .ant-form {
+  max-width: 400px;
+}
+
+.main-content-wrapper {
+  padding: 20px 40px;
+}
+
+.ant-form-item-label {
+  width: 90px;
+  text-align: left;
+}
+
+.form-checkbox .ant-form-item-control-input-content {
+  text-align: left;
+}
+
+.form-buttons-container, .header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 40px;
+}
+
+.icon-holder {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+  padding-left: 15px;
+  border-left: 1px solid #fff;
+}
+
+.logout-icon {
+  font-size: xx-large;
+  cursor: pointer;
+}
+
+.add-user-btn {
+  display: flex;
+  justify-content: flex-start;
+  padding: 15px 0;
+}
+
+.close-icon-custom {
+  background: red;
+  color: #fff;
+  padding: 5px;
+}
+
+.check-icon-custom {
+  background: #75ab75;
+  color: #fff;
+  padding: 5px;
+}
+
+.edit-btn, .save-btn {
+  margin-right: 15px;
+}
+
+.green-btn, .green-btn:active, .green-btn:focus {
+  background-color: #75ab75;
+  color: #fff;
+  border: 1px solid #75ab75
+}
+
+.green-btn:hover {
+  background-color: #3b843b;
+  color: #fff;
+  border: 1px solid #3b843b
+}
+
+.logged-user-info {
+  display: flex;
+}
+
+.ant-table-cell {
+  vertical-align: top;
+}
+
+.header-wrapper {
+  background-color: #75ab75;
+}
+
+.white-text-color {
+  color: #fff;
+}
+
+.ant-table-column-sorters {
+  align-items: flex-start !important;
+} 
+
+.not-found-wrapper {
+  padding: 40px;
+}
+
+.not-found-wrapper > div {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.ant-table-thead th {
+  background-color: #75ab75 !important;
+  color: #fff !important;
+}
