@@ -191,25 +191,25 @@
       "active": "true"
     },
     {
-      "username": "gosho97",
-      "password": "123456",
-      "email": "test@testov.com",
-      "country": "Bulgaria",
-      "id": 2
-    },
-    {
-      "username": "gosho197",
-      "password": "123456",
-      "email": "gosho10@tets.com",
-      "country": "Bulgaria",
-      "id": 3
-    },
-    {
       "username": "Test Ivanov",
       "password": "123456",
       "email": "test@ivanov.com",
       "country": "Bulgaria",
       "id": 4
+    },
+    {
+      "username": "Test Testov",
+      "password": "123456",
+      "email": "test@testov.com",
+      "country": "Bulgaria",
+      "id": 5
+    },
+    {
+      "username": "Milen Vasilev",
+      "password": "123456",
+      "email": "milen@mail.com",
+      "country": "Bulgaria",
+      "id": 6
     }
   ]
 }

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import {
   Form, Input, Button, notification, Select, Card,
@@ -16,15 +16,12 @@ const { Option } = Select;
  */
 const Login = (props) => {
   const { history } = props;
+  const [accounts, setAccounts] = useState([]);
 
   useEffect(() => {
-    if (localStorage.getItem('accounts') === null) {
-      axios.get(`${REQUEST_URL}/register`).then((response) => {
-        if (localStorage.getItem('accounts') === null) {
-          localStorage.setItem('accounts', JSON.stringify(response.data));
-        }
-      }).catch((error) => console.log(error));
-    }
+    axios.get(`${REQUEST_URL}/register`).then((response) => {
+      setAccounts(response.data);
+    }).catch((error) => console.log(error));
   }, []);
 
   /**
@@ -33,9 +30,7 @@ const Login = (props) => {
    * @returns {void}
    */
   const onLogin = (data) => {
-    const usersAccounts = localStorage.getItem('accounts');
-    const parsed = JSON.parse(usersAccounts);
-    const loggedUser = parsed.find((user) =>
+    const loggedUser = accounts.find((user) =>
       user.password === data.password && user.username === data.username
       && user.email === data.email && user.country === data.country);
     

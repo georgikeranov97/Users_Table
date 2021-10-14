@@ -21,9 +21,6 @@ const Register = (props) => {
   useEffect(() => {
     axios.get(`${REQUEST_URL}/register`).then((response) => {
       setRegistrations(response.data);
-      if (localStorage.getItem('accounts') === null) {
-        localStorage.setItem('accounts', JSON.stringify(response.data));
-      }
     }).catch((error) => console.log(error));
   }, []);
 
@@ -33,10 +30,8 @@ const Register = (props) => {
    * @returns {void}
    */
   const onRegister = (data) => {
-    const usersAccounts = localStorage.getItem('accounts') !== null ? localStorage.getItem('accounts') : [];
-    const parsed = usersAccounts.length ? JSON.parse(usersAccounts) : [];
-    const checkIfExists = parsed.length
-      ? parsed.find((account) => account.username === data.username || account.email === data.email)
+    const checkIfExists = registrations.length
+      ? registrations.find((account) => account.username === data.username || account.email === data.email)
       : undefined;
 
     if (checkIfExists) {
@@ -52,18 +47,18 @@ const Register = (props) => {
         },
         body: JSON.stringify(data),
       }).then((response) => {
-        localStorage.removeItem('accounts');
-        localStorage.setItem('accounts', JSON.stringify([...registrations, data]));
-      
         notification.success({
           message: 'You have registered successfully!',
+          description: 'You are going to be redirected just in few seconds.',
         });
       })
         .catch((error) => notification.error({
           message: 'Something went wrong.',
         }));
       
-      history.push('/login');
+      setTimeout(() => {
+        history.push('/login');
+      }, 3000);
     }
   }
 
